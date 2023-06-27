@@ -94,6 +94,7 @@ def change_entry(data_tuple):
     print("Запись изменена!\n")
 
 def search_entry():
+
     search_data = existing_entry(0, input("Введите данные для поиска: "))
     if search_data:
         print(*search_data, sep="\n")
@@ -101,6 +102,7 @@ def search_entry():
         print("Данные неверны!")
 
 def existing_entry(rec_id, data):
+
     if rec_id:
 <<<<<<< HEAD
         candidates = [i for i in all_data if rec_id in i.split([0])]
@@ -112,6 +114,7 @@ def existing_entry(rec_id, data):
     return candidates
 
 def data_collection(num):
+
     answer = input(f"Введите {num}: ")
 <<<<<<< HEAD
     while True:
@@ -133,6 +136,7 @@ def data_collection(num):
     return answer
 
 def main_menu():
+
     play = True
 
     while play:
