@@ -138,7 +138,6 @@ def data_collection(num):
 def main_menu():
 
     play = True
-
     while play:
         read_records()
 <<<<<<< HEAD
@@ -184,8 +183,8 @@ def main_menu():
 <<<<<<< HEAD
 =======
 def edit_menu():
-    add_dict = {"1": "Заголовок", "2": "Заметка"}
 
+    add_dict = {"1": "Заголовок", "2": "Заметка"}
     show_all()
     record_id = input("Введите ID: ")
 
