@@ -9,14 +9,16 @@ datetime = datetime.datetime.today()
 dt = datetime.strftime("%d.%m.%Y %H:%M")
 
 if not path.exists(file_base):
-    with open(file_base, "w", encoding="utf-8") as  _:
+    with open(file_base, "w", encoding="utf-8") as _:
         pass
 
 def read_records():
     global all_data, last_id
 
     with open(file_base, "r", encoding="utf-8") as f:
+
         all_data = [i.strip() for i in f]
+
         if all_data:
             last_id = int(all_data[-1].split()[0])
         return all_data
@@ -40,7 +42,7 @@ def add_new_entry():
         answers.insert(0, str(last_id))
 
         with open(file_base, "a", encoding="utf-8") as f:
-            f.write(f'{" ".join(answers)}\n')
+            f.write(f'{" ".join(answers)}; {dt}\n')
         print("Запись успешно добавлена!\n")
     else:
         print("Запись уже существует!")
@@ -90,6 +92,7 @@ def search_entry():
         print("Данные неверны!")
 
 def existing_entry(rec_id, data):
+    show_all()
 
     if rec_id:
         candidates = [i for i in all_data if rec_id in i.split()[0]]
